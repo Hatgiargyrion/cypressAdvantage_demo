@@ -1,4 +1,4 @@
-Feature: Advantageapi
+Feature: Catalog
 
         Scenario: Consult product with sucess
                 Given I consult the product "tab" and quantity per each category "15"
