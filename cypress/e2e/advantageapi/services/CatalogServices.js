@@ -8,7 +8,7 @@ let paramsConsultCatalog = {
 let responseContext = {};
 let expectedCategoryName;
 
-class AdvantageapiServices {
+class CatalogServices {
 
     doGetRequestConsultCatalog(name, quantityPerEachCategory) {
         paramsConsultCatalog.name = name
@@ -33,4 +33,4 @@ class AdvantageapiServices {
 
     }
 }
-export default AdvantageapiServices
+export default CatalogServices

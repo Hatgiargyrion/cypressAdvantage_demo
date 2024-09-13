@@ -1,16 +1,16 @@
 import { Given, When, Then, And} from "@badeball/cypress-cucumber-preprocessor"
-import AdvantageapiServices from '../services/AdvantageapiServices'
+import CatalogServices from '../services/CatalogServices'
 
-const advantageapiServices = new AdvantageapiServices()
+const catalogServices = new CatalogServices()
 
 Given ('I consult the product {string} and quantity per each category {string}', (name, quantityPerEachCategory) => {
-    advantageapiServices.doGetRequestConsultCatalog(name, quantityPerEachCategory)
+    catalogServices.doGetRequestConsultCatalog(name, quantityPerEachCategory)
 })
 
 When ('the response code states should be {int}', (expectedStatusCode) => {
-    advantageapiServices.validateStatusCode(expectedStatusCode)
+    catalogServices.validateStatusCode(expectedStatusCode)
 })
 
 Then ('the response body should contain value {string}', (expectedValue) => {
-    advantageapiServices.validateResponse(expectedValue)
+    catalogServices.validateResponse(expectedValue)
 })
