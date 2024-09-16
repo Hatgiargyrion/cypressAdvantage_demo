@@ -1,5 +1,3 @@
-import 'cypress-file-upload';
-
 const consultCatalog = 'https://www.advantageonlineshopping.com/catalog/api/v1/products/search';
 const uploadNewImage = 'https://www.advantageonlineshopping.com/catalog/api/v1/product/image/';
 const consultProductById = 'https://www.advantageonlineshopping.com/catalog/api/v1/products/';
@@ -50,7 +48,7 @@ class CatalogServices {
 
             cy.api({
                 method: 'POST',
-                url: uploadNewImage+paramsUploadNewImage.userId+'/'+paramsUploadNewImage.source+'/'+paramsUploadNewImage.color+'?product_id='+paramsUploadNewImage.product_id,
+                url: uploadNewImage + paramsUploadNewImage.userId + '/' + paramsUploadNewImage.source + '/' + paramsUploadNewImage.color + '?product_id=' + paramsUploadNewImage.product_id,
                 headers: {
                     accept: 'application/json',
                     'Content-Type': 'multipart/form-data',
@@ -80,7 +78,7 @@ class CatalogServices {
     validateUploadNewImage() {
         const response = Cypress.env('apiResponse')
         const imageId = Cypress.env('imageId')
-        expect(paramsUploadNewImage.color+'##'+response.body.images).to.include(imageId)
+        expect(paramsUploadNewImage.color + '##' + response.body.images).to.include(imageId)
     }
 
     doGetRequestConsultProductById(id) {
